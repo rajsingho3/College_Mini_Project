@@ -7,30 +7,31 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: #222;
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #222;
 }
 
 header {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
 }
 
 header h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: Bebas Neue;
   text-decoration: underline;
-  font-size: 35px;
+  font-size: 45px;
   line-height: 30px;
   font-weight: 800;
-  letter-spacing: 2px;
-  color: #e6e5e5;
+  letter-spacing: 3px;
+  color:#fffffe;
 }
 
 header p {
-  color: #e6e5e5;
+  color: #fffffe;
   font-size: 16px;
   letter-spacing: 1px;
   line-height: 15px;
@@ -43,12 +44,36 @@ header p a {
   color: #e6e5e5;
 }
 
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.blog {
+  flex: 1;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.blog.left, .blog.right {
+  flex-basis: 50%;
+}
+
+@media (max-width: 768px) {
+  .blog.left, .blog.right {
+    flex-basis: 100%;
+  }
+}
+
 .container {
   /* border: 1px solid #999; */
   margin: 50px 150px;
   gap: 50px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .row {
@@ -65,29 +90,30 @@ header p a {
 .blog {
   border: 2px solid #999;
   padding: 15px 30px;
-  background: #2c1c7c;
-  color: #ffeeaa;
+  background: #fffffe;
+  color: #232946;
 }
 
 .blog a,
 .blog p {
-  color: #f3e093;
+  color: #232946;
   margin: 8px 0;
 }
 
 .blog a {
   transition: transform 0.5s ease;
+  
   margin: 4px 0;
   display: inline-block;
 }
 
 .blog h2 {
   margin: 5px 0;
-  color: #ff9100;
+  color: #232946;
 }
 
 .blog h4 {
-  color: #ffff00;
+  color: #232946;
 }
 
 .left {
@@ -100,7 +126,7 @@ header p a {
 
 .blog a:hover {
   transform: scale(1.1);
-  border-bottom: 2px solid #ff00dd;
+  border-bottom: 2px solid #ff8000;
 }
 
 footer {
@@ -174,7 +200,7 @@ footer {
 }
 
 .review-section {
-  background-color: #222;
+  background-color: #333;
   padding: 20px;
   border: 1px solid #222;
   margin: 20px 0;
@@ -218,20 +244,21 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #232946;
   
 }
 
 .search-bar {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  justify-content:right;
+  padding: 5px;
+  align-items: center;
 }
 
 #search-form {
   display: flex;
   width: 100%;
-  max-width: 600px;
+  max-width: fit-content ;
 }
 
 #search-input {
@@ -239,40 +266,40 @@ button[type="submit"]:hover {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px 0 0 4px;
-  outline: none;
+  
 }
 
-#search-input:focus {
-  border-color: #4CAF50;
-}
-
-button[type="submit"] {
-  background-color: #4CAF50;
+#search-form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #007bff;
   color: white;
-  padding: 10px 20px;
-  border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #458fa0;
 }
 
-.google-signup {
+.google-signup-btn {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  padding: 10px;
 }
 
-.google-btn {
-  background-color: #4285F4;
-  color: white;
-  padding: 10px 20px;
+.google-signup-btn button {
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #4285F4;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+.google-signup-btn button :hover {
+  background-color: #357ae8;
+ 
+}
+
