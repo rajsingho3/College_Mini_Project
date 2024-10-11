@@ -28,8 +28,10 @@ const userSchema = new mongoose.Schema({
 // Define Review Schema
 const reviewSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  content: String,
+  name: String,
+  email: String,
   rating: Number,
+  review: String,
 });
 
 // Create Models
@@ -48,17 +50,20 @@ app.post('/addUser', async (req, res) => {
   }
 });
 
-// Example route to add a review
-app.post('/addReview', async (req, res) => {
-  const { userId, content, rating } = req.body;
-  const review = new Review({ userId, content, rating });
+// Handle form submission
+app.post('/submit-review', async (req, res) => {
+  const { name, email, rating, review } = req.body;
+
+  const newReview = new Review({ name, email, rating, review });
+
   try {
-    await review.save();
-    res.status(201).send('Review added');
-  } catch (err) {
-    res.status(400).send('Error adding review');
+    await newReview.save();
+    res.status(200).send('Review submitted successfully');
+  } catch (error) {
+    res.status(500).send('Failed to submit review');
   }
 });
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

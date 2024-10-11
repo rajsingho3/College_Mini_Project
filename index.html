@@ -31,6 +31,18 @@
         <i class="fab fa-google"></i> Sign Up with Google
       </button>
     </div>
+<!-- user details and logout button-->
+<div id="content">
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div id="user-details" style="display: none;">
+      <img id="user-image" src="" alt="User Image">
+      <p id="user-name"></p>
+      <p id="user-email"></p>
+      <button onclick="signOut()">Sign Out</button>
+  </div>
+</div>
+
+
     <section class="container">
       <div class="row">
         <div class="blog left">
@@ -126,7 +138,7 @@
     </section>
     <div class="review-section">
       <h3>Add a Review</h3>
-      <form id="review-form">
+      <form class="review-form">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
@@ -193,6 +205,7 @@
     </footer>
     <script src="main.js"></script>
     <script src="server.js"></script>
+    <script src="review.js"></script>
 
 
   </body>

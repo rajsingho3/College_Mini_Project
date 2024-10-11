@@ -40,6 +40,25 @@ document.getElementById('google-signup-btn').addEventListener('click', function(
   });
 });
 
+// Function to handle sign-in success
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  document.getElementById('user-image').src = profile.getImageUrl();
+  document.getElementById('user-name').innerText = profile.getName();
+  document.getElementById('user-email').innerText = profile.getEmail();
+  document.getElementById('user-details').style.display = 'block';
+  document.querySelector('.g-signin2').style.display = 'none';
+}
+
+// Function to handle sign-out
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    document.getElementById('user-details').style.display = 'none';
+    document.querySelector('.g-signin2').style.display = 'block';
+  });
+}
+
 // Load the client library on window load
 window.onload = function() {
   loadGapiClient();

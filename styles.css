@@ -303,3 +303,21 @@ button[type="submit"]:hover {
  
 }
 
+/* User details*/
+#content {
+  text-align: center;
+}
+
+#g-signin2 {
+  margin-bottom: 20px;
+}
+
+#user-details img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+#user-details p {
+  margin: 5px 0;
+}
