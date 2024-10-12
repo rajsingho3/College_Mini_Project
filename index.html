@@ -17,27 +17,44 @@
     />
   </head>
   <body>
+  
     <header>
-      <h1>TheContentCraft</h1>
-      <br>
-      <br>
-      <nav>
-        <a href="./login.html">Login</a>
-        <div class="dark-mode">
-            <button id="toggle-theme">Toggle Dark Mode</button>
-      </div>
+      
+      <a href="#" class="logo" id=""><span id="newlogo"></span></a>
+      <a href="#" class="logo">The Content Craft</a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#Review"> Review</a>
         
+        
+       
+      </nav>
+       <div class="search-bar">
+                <form action="https://www.google.com/search" method="get" id="search-form">
+                    <input type="text" name="q" id="search-input" placeholder="Search Google...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+      <div class="icons">
+        <a href="about.html" class="fas fa-info-circle"></a>
+        
+        <a href="login.html" id="loginIcon" class="fas fa-user"></a>
+
+      </div>
+      <nav>
+        <!-- Other navbar content -->
+        <label class="switch">
+          <button id="dark-mode-toggle" class="dark-mode-toggle">
+            <i id="dark-mode-icon" class="fas fa-moon"></i>
+        </button>
+        </label>
     </nav>
     </header>
-    <div class="search-bar">
-      <form id="search-form">
-        <input type="text" id="search-input" name="search" placeholder="Search...">
-        <button type="submit">Search</button>
-      </form>
-    </div>
-    
-
-
+    <br>
+    <br>
+     
     <section class="container">
       <div class="row">
         <div class="blog left">

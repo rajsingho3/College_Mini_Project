@@ -2,10 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { OAuth2Client } = require('google-auth-library');
 const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
 const client = new OAuth2Client('33157572429-io4s5e7oj3p42i9evbrc0g6k8n7isj1t.apps.googleusercontent.com');
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://rajsingh:6MBezNqg2iqlnbKg@cluster0.u7lgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
@@ -64,7 +67,14 @@ app.post('/submit-review', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

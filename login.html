@@ -9,15 +9,15 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form id="login-form">
-            <label for="Email id">Email id:</label>
-            <input type="text" id="Email id" name="Email idd" required>
+        <form id="login-form" action="/login" method="POST">
+            <label for="email-id">Email id:</label>
+            <input type="text" id="email-id" name="email-id" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
         <div class="google-signup-btn">
-            <button id="google-signup-btn" class="google-signup-btn">
+            <button id="google-signup-btn">
                 <i class="fab fa-google"></i> Sign Up with Google
             </button>
         </div>

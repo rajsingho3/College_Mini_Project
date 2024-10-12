@@ -1,47 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Poppins&family=Raleway&family=Roboto&display=swap");
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  * {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
 }
-
 body {
-  font-family: Arial, sans-serif;
+  background-color: var(--off-white); /* Updated background color */
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+:root {
+  --deep-teal: #003d4d; /* Updated primary color */
+  --off-white: #f8f9fa; /* Updated background color */
+  --dark-slate: #2f4f4f; /* Text color */
+  --soft-gold: #d9c79e; /* Accent color */
 }
 header {
-  text-align: center;
-  padding: 20px;
-  background-color: #b7b5b5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #003d4d;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-  font-family: Bebas Neue;
-  text-decoration: underline;
-  font-size: 45px;
-  line-height: 30px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color:#0f0fe2;
+header .logo {
+  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--off-white); /* White logo for contrast */
+  font-weight: bolder;
 }
 
-header p {
-  color: #fffffe;
-  font-size: 16px;
-  letter-spacing: 1px;
-  line-height: 15px;
-  font-weight: 900;
+.logo img {
+  width: 100px;
+  padding: 0px 6px;
+  margin-right: -14px;
+}
+
+header .logo:hover {
+  color: var(--soft-gold); /* Soft Gold on hover for logo */
+  text-decoration: none;
+}
+
+header .logo span {
+  color: var(--off-white); /* Updated to match logo color */
+}
+
+header .navbar a {
+  font-size: 1.8rem;
+  padding: 0 1.5rem;
+  color: #ffffff;
+}
+
+header .navbar a:hover {
+  color: var(--red);
+  text-decoration: none;
+}
+
+header .icons a {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+header #toggler {
+  display: none;
+}
+
+header .fa-bars {
+  font-size: 3rem;
+  color: var(--off-white); /* White for better visibility */
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
   cursor: pointer;
+  border: .1rem solid rgba(0, 0, 0, 0.3);
+  display: none;
 }
 
-header p a {
-  cursor: pointer;
-  color: #e6e5e5;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    /* Stack navbar items vertically */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
 
+  .navbar ul {
+    flex-direction: column;
+    /* Stack navbar links vertically */
+    gap: 10px;
+    /* Space between navbar links */
+    margin-top: 10px;
+    /* Space above navbar links */
+  }
+
+  .navbar {
+    background-color: var(--deep-teal); /* Updated navbar background color */
+    padding: 31px 20px; /* Increased top and bottom padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 .row {
   display: flex;
@@ -281,91 +359,43 @@ button[type="submit"]:hover {
   background-color: #458fa0;
 }
 
-
-
-/* Nav Bar*/
-/* Style for the navigation bar */
-nav {
-  background-color: #e9e3e3;
-  overflow: hidden;
-}
-
-/* Style for the unordered list inside the nav */
-nav ul {
-  
-  margin: 100;
-  padding: 0;
-  display: flex;
-}
-
-/* Style for each list item inside the nav */
-nav ul li {
-  float: right;
-}
-
-/* Style for the links inside the nav */
-nav ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-/* Hover effect for the links */
-nav ul li a:hover {
-  background-color: #575757;
-}
-/* css for dark mode*/
-/* Dark mode styles */
+/*For Dark Mode*/
+/* Add this to your styles.css file */
 body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+    background-color: #121212;
+    color: #ffffff;
 }
 
-header.dark-mode {
-  background-color: #1f1f1f;
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    border-color: #333;
 }
 
-header.dark-mode h1 {
-  color: #f2f2f2;
+body.dark-mode input {
+    background-color: #e6dbdb;
+    color: #ffffff;
+    border-color: #555;
 }
 
-header.dark-mode p {
-  color: #cccccc;
+body.dark-mode button {
+    background-color: #444;
+    color: #ffffff;
+    border-color: #666;
 }
 
-.blog.dark-mode {
-  background: #1e1e1e;
-  color: #f2f2f2;
-  border: 2px solid #444;
+.dark-mode-toggle-container {
+    display: inline-block;
+    margin-left: 20px;
 }
 
-.blog.dark-mode a,
-.blog.dark-mode p {
-  color: #f2f2f2;
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
 }
 
-footer.dark-mode {
-  background-color: #1a1a1a;
-}
-
-.footer-bottom.dark-mode {
-  background-color: #121212;
-}
-
-.review-section.dark-mode {
-  background-color: #1a1a1a;
-}
-
-nav.dark-mode {
-  background-color: #1f1f1f;
-}
-
-nav.dark-mode ul li a {
-  color: #f2f2f2;
-}
-
-nav.dark-mode ul li a:hover {
-  background-color: #444;
+body.dark-mode .dark-mode-toggle {
+    color: #fff;
 }
