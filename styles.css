@@ -11,13 +11,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #222;
 }
-
 header {
   text-align: center;
   padding: 20px;
-  background-color: #222;
+  background-color: #b7b5b5;
 }
 
 header h1 {
@@ -27,7 +25,7 @@ header h1 {
   line-height: 30px;
   font-weight: 800;
   letter-spacing: 3px;
-  color:#fffffe;
+  color:#0f0fe2;
 }
 
 header p {
@@ -79,7 +77,7 @@ header p a {
 .row {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 60px; */
+  margin-bottom: 60px; 
 }
 
 .left,
@@ -283,41 +281,91 @@ button[type="submit"]:hover {
   background-color: #458fa0;
 }
 
-.google-signup-btn {
+
+
+/* Nav Bar*/
+/* Style for the navigation bar */
+nav {
+  background-color: #e9e3e3;
+  overflow: hidden;
+}
+
+/* Style for the unordered list inside the nav */
+nav ul {
+  
+  margin: 100;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  padding: 10px;
 }
 
-.google-signup-btn button {
-  border: none;
-    padding: 10px 20px;
-    background-color: white;
-    color: #4285F4;
-    border-radius: 5px;
-    cursor: pointer;
+/* Style for each list item inside the nav */
+nav ul li {
+  float: right;
 }
 
-.google-signup-btn button :hover {
-  background-color: #357ae8;
- 
-}
-
-/* User details*/
-#content {
+/* Style for the links inside the nav */
+nav ul li a {
+  display: block;
+  color: white;
   text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 
-#g-signin2 {
-  margin-bottom: 20px;
+/* Hover effect for the links */
+nav ul li a:hover {
+  background-color: #575757;
+}
+/* css for dark mode*/
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
 
-#user-details img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+header.dark-mode {
+  background-color: #1f1f1f;
 }
 
-#user-details p {
-  margin: 5px 0;
+header.dark-mode h1 {
+  color: #f2f2f2;
+}
+
+header.dark-mode p {
+  color: #cccccc;
+}
+
+.blog.dark-mode {
+  background: #1e1e1e;
+  color: #f2f2f2;
+  border: 2px solid #444;
+}
+
+.blog.dark-mode a,
+.blog.dark-mode p {
+  color: #f2f2f2;
+}
+
+footer.dark-mode {
+  background-color: #1a1a1a;
+}
+
+.footer-bottom.dark-mode {
+  background-color: #121212;
+}
+
+.review-section.dark-mode {
+  background-color: #1a1a1a;
+}
+
+nav.dark-mode {
+  background-color: #1f1f1f;
+}
+
+nav.dark-mode ul li a {
+  color: #f2f2f2;
+}
+
+nav.dark-mode ul li a:hover {
+  background-color: #444;
 }
