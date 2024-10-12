@@ -102,3 +102,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         console.error('Error:', error);
     });
 });
+
+// responsiness 
+document.querySelector('.hamburger').addEventListener('click', function() {
+  document.querySelector('.navbar').classList.toggle('active');
+});
