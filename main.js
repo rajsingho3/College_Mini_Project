@@ -70,6 +70,37 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('user-info').textContent = `Welcome, ${loggedInUser}`;
       document.getElementById('loginIcon').style.display = 'none';
   }
+
+  // Updated form submission logic
+  document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const email = document.getElementById('email-id').value;
+      const password = document.getElementById('password').value;
+
+      // Perform login logic here, e.g., send data to the server
+      fetch('/login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              // Handle successful login
+              window.location.href = '/dashboard';
+          } else {
+              // Handle login failure
+              alert('Login failed: ' + data.message);
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+  });
 });
 
 // Updated form submission logic
