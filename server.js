@@ -12,7 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://rajsingh:GQkjUy50FFbA4gI0@cluster0.u7lgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
@@ -64,6 +65,30 @@ app.post('/submit-review', async (req, res) => {
     res.status(200).send('Review submitted successfully');
   } catch (error) {
     res.status(500).send('Failed to submit review');
+  }
+});
+
+// Google OAuth2 login route
+app.post('/login', async (req, res) => {
+  const { token } = req.body;
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: '33157572429-io4s5e7oj3p42i9evbrc0g6k8n7isj1t.apps.googleusercontent.com',  // Make sure this is your actual CLIENT_ID
+    });
+    const payload = ticket.getPayload();
+    const { sub, email, name } = payload;
+
+    let user = await User.findOne({ googleId: sub });
+
+    if (!user) {
+      user = new User({ googleId: sub, email, name });
+      await user.save();
+    }
+
+    res.status(200).send({ message: 'Login successful', user });
+  } catch (error) {
+    res.status(400).send('Login failed');
   }
 });
 
