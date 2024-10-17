@@ -74,7 +74,7 @@ app.post('/login', async (req, res) => {
   try {
     const ticket = await client.verifyIdToken({
       idToken: token,
-      audience: '33157572429-io4s5e7oj3p42i9evbrc0g6k8n7isj1t.apps.googleusercontent.com',  // Make sure this is your actual CLIENT_ID
+      audience: '33157572429-io4s5e7oj3p42i9evbrc0g6k8n7isj1t.apps.googleusercontent.com',  
     });
     const payload = ticket.getPayload();
     const { sub, email, name } = payload;
