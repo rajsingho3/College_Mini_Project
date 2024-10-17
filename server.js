@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://rajsingh:6MBezNqg2iqlnbKg@cluster0.u7lgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://rajsingh:GQkjUy50FFbA4gI0@cluster0.u7lgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   
 });
 
