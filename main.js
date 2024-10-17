@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
           if (data.success) {
               // Handle successful login
-              window.location.href = '/dashboard';
+              window.location.href = '/index.html';
           } else {
               // Handle login failure
               alert('Login failed: ' + data.message);
