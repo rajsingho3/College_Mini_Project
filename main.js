@@ -123,7 +123,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     .then(data => {
         if (data.success) {
             // Handle successful login
-            window.location.href = '/dashboard';
+            window.location.href = '/index.html';
         } else {
             // Handle login failure
             alert('Login failed: ' + data.message);
